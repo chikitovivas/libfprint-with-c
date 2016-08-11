@@ -1,0 +1,24 @@
+INSTALACION EN LINUX DE SQLITE y LIBFPRINT
+  -sudo apt-get install sqlite3
+  -sudo apt-get install libfprint-dev
+
+BD
+  CREATE TABLE huellas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    huella BLOB,
+    size_data INTEGER
+  );
+
+  -(*)BLOB bloque binario, tipo de dato en la cual se guardara los datos de la huella
+
+CREAR BD
+    -sqlite3 usuariosH.bd < usuarios.sql
+
+REGISTRAR UNA HUELLA
+    -gcc registrar.c -o registrar -L../libfprint/.libs -lfprint -lsqlite3
+    - ./registrar <num_usuario>
+
+IDENTIFICAR HUELLA
+    -gcc identificar.c -o identificar -L../libfprint/.libs -lfprint -lsqlite3
+    - ./identificar

@@ -1,0 +1,6 @@
+CREATE TABLE huellas(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+user_id INTEGER,
+huella BLOB,
+size_data INTEGER
+);
