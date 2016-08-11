@@ -2,18 +2,12 @@
 Uso de la libreria libfprint para reconocimiento de huellas con digital Persona 4500
 
 # Instalacion en Linux de Sqlite y libfprint
-  -sudo apt-get install sqlite3
-  -sudo apt-get install libfprint-dev
+       
+    -sudo apt-get install sqlite3
+    -sudo apt-get install libfprint-dev
 
-#BD
-  CREATE TABLE huellas(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER,
-    huella BLOB,
-    size_data INTEGER
-  );
-
-  -(*)BLOB bloque binario, tipo de dato en la cual se guardara los datos de la huella
+#BLOB 
+    Bloque binario, tipo de dato en la cual se guardara los datos de la huella cuando se transformen a buffer
 
 #Crear BD
     -sqlite3 usuariosH.bd < usuarios.sql
